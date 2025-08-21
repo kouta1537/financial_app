@@ -12,6 +12,8 @@ html, body {
 }
 
 header {
+  position: fixed;
+  background-color: #f0f2f4;
   display: flex;
   justify-content: space-between;
   align-items: center;
