@@ -75,10 +75,57 @@ header {
 }
 
 .subtitle-text {
-  font-size: 0.9rem;    /* フォントサイズを小さめに設定（お好みで調整） */
-  font-weight: normal;  /* 太字にならないように通常の太さに */
-  line-height: 1.4;     /* 行間を少し詰めて読みやすく調整 */
-  color: inherit;       /* 色は必要に応じて設定 */
-  margin: 0;            /* 余白調整もお好みで */
+  font-size: 0.9rem;    
+  font-weight: normal;
+  line-height: 1.4;
+  color: inherit;     
 } 
+@media screen and (max-width: 768px) {
+  .FirstView {
+    height: auto;
+    background-position: top center;
+    padding: 20px; 
+  }
+
+  .content-right {
+    width: 100%;   
+    padding-left: 0; 
+    padding-top: 40px; 
+    align-items: center;
+    text-align: center;
+  }
+
+  .title-text {
+    font-size: 2rem;
+  }
+
+  .subtitle-text {
+    font-size: 0.8rem;
+  }
+
+  .header {
+    padding: 12px 20px;
+  }
+
+  .header-buttons a {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .title-text {
+    font-size: 1.5rem;
+  }
+
+  .subtitle-text {
+    font-size: 0.75rem;
+  }
+
+  .header-buttons a {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+}
 
