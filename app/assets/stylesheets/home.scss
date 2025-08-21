@@ -1,0 +1,84 @@
+.FirstView {
+  height: 100vh;     
+  background-image: url('home/first-view.png');  
+  background-size: cover;        
+  background-position: center;    
+  background-repeat: no-repeat;     
+} 
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  border-bottom: 1px solid #f0f2f4;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.header-title {
+  margin: 0;
+}
+
+.header-buttons {
+  list-style: none;
+  display: flex;
+  gap: 8px; 
+  padding: 0;
+  margin: 0;
+}
+
+
+.header-buttons a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #1979e6;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.header-buttons a:hover {
+  background-color: #135ab4;
+}
+
+.content-right {
+  width: 50%;
+  color: white; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;      
+  padding-left: 650px;
+  padding-top: 200px;
+}
+.btn-large-primary {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #1979e6;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.title-text{
+  font-size: 50px;
+}
+
+.subtitle-text {
+  font-size: 0.9rem;    /* フォントサイズを小さめに設定（お好みで調整） */
+  font-weight: normal;  /* 太字にならないように通常の太さに */
+  line-height: 1.4;     /* 行間を少し詰めて読みやすく調整 */
+  color: inherit;       /* 色は必要に応じて設定 */
+  margin: 0;            /* 余白調整もお好みで */
+} 
+
