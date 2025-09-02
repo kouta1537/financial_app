@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="home.css" />
+    <%= stylesheet_link_tag 'home', media: 'all', 'data-turbo-track': 'reload' %>
     <title>ざっくり経営ナビ</title>
   </head>
 
@@ -20,7 +20,8 @@
 </header>
 
     <main class="FirstView">
-      <div class="content-right">
+
+      <div class="title-content">
       <h1 class="title-text">自社に必要な資金を知ろう</h1>
       <h2 class="subtitle-text">
         本サイトでは、現状の運転資金を把握し自社にどの程度の借入が必要か<br>

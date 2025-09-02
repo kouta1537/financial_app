@@ -1,9 +1,15 @@
 .FirstView {
   height: 100vh;     
-  background-image: url('home/first-view.png');  
-  background-size: cover;        
-  background-position: center;    
-  background-repeat: no-repeat;     
+  background-image: url('home/background-view.png');  
+  background-size: cover;       
+  background-position: left;    
+  background-repeat: no-repeat; 
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 80px;
+  box-sizing: border-box;  
+  color: white;  
 } 
 
 html, body {
@@ -13,6 +19,9 @@ html, body {
 
 header {
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: #f0f2f4;
   display: flex;
   justify-content: space-between;
@@ -21,6 +30,7 @@ header {
   border-bottom: 1px solid #f0f2f4;
   box-sizing: border-box;
   width: 100%;
+  z-index: 10;  
 }
 
 .header-title {
@@ -50,17 +60,11 @@ header {
   background-color: #135ab4;
 }
 
-.content-right {
-  width: 50%;
-  color: white; 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;      
-  padding-left: 650px;
-  padding-top: 200px;
+.title-content {
+  text-align: center;
+  margin-right: 50px;
 }
+
 .btn-large-primary {
   display: inline-block;
   padding: 8px 16px;
@@ -74,13 +78,14 @@ header {
 
 .title-text{
   font-size: 50px;
+  color: #f0f2f4;
 }
 
 .subtitle-text {
   font-size: 0.9rem;    
   font-weight: normal;
   line-height: 1.4;
-  color: inherit;     
+  color: #f0f2f4;     
 } 
 @media screen and (max-width: 768px) {
   .FirstView {
@@ -89,8 +94,7 @@ header {
     padding: 20px; 
   }
 
-  .content-right {
-    width: 100%;   
+  .title-content {   
     padding-left: 0; 
     padding-top: 40px; 
     align-items: center;
