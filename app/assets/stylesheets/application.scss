@@ -1,1 +1,27 @@
 @import "_sessions";
+
+.devise-container {
+  background: #f0f2f4;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  width: 350px;
+  margin: 0 auto;
+}   
+
+.extra-links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.extra-links a {
+  margin: 10px 0;
+  color: #1979e6; 
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.extra-links a:hover {
+  text-decoration: underline;
+  color: #135ab4;
+}
