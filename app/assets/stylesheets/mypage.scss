@@ -1,0 +1,72 @@
+.mypage-container {
+  color: #fff;
+}
+
+.mypage-header {
+  position: absolute;
+  display: flex;
+  top: 40px;
+  left: 40px;
+  z-index: 2;
+  min-width: 1300px;
+  min-height: 50px;
+  padding: 50px;
+  justify-content: space-between; 
+}
+
+.mypage-header .username {
+    font-size: 30px;
+}
+
+.mypage-header .profile-edit a {
+  font-size: 15px;
+  margin-top: 10px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid #fff; /* 白い枠線 */
+  border-radius: 4px;      /* 角は少し丸める */
+  color: #fff;             /* 文字は白 */
+  background-color: rgba(255, 255, 255, 0.1); /* うっすら白の背景透過 */
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.mypage-header .username,
+.mypage-header .profile-edit .btn-link {
+  color: #fff; 
+}
+
+
+.calc-history-center {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.mypage-main h2 {
+  color: #fff;
+}
+
+
+.mypage-main p {
+  color: #fff;
+}
+
+.mypage-main .special-black {
+  color: #222;
+}
+
+
+@media (max-width: 600px) {
+  .mypage-header {
+    top: 16px;
+    left: 8px;
+  }
+}
+

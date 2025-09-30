@@ -1,2 +1,25 @@
-<h1><%= @user.username %> さんのマイページ</h1>
-<p>メールアドレス: <%= @user.email %></p>
+ <%= stylesheet_link_tag 'mypage', media: 'all', 'data-turbo-track': 'reload' %>
+
+<div class="mypage-container">
+  <div class="mypage-header">
+    <div class="username">
+      <strong><%= @user.username %></strong>
+    </div>
+    <div class="profile-edit">
+      <%= link_to 'プロフィール編集', edit_user_registration_path, class: "btn-link" %>
+    </div>
+  </div>
+
+  <main class="mypage-main">
+    <h2>計算結果履歴</h2>
+    <% if @calculations.present? %>
+    <% @calculations.each do |calc| %>
+    <p><%= calc.created_at.strftime('%Y/%m/%d') %> 借入必要額: <%= calc.borrowing %> 円</p>
+    <% end %>
+    <% else %>
+    <p>計算結果がまだありません。</p>
+    <% end %>
+    </ul>
+  </main>
+</div>
+

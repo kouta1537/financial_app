@@ -6,22 +6,24 @@
     <%= stylesheet_link_tag 'home', media: 'all', 'data-turbo-track': 'reload' %>
     <title>ざっくり経営ナビ</title>
   </head>
-
-    <body>
-
+  <body>
     <main class="FirstView">
-
       <div class="title-content">
-      <h1 class="title-text">自社に必要な資金を知ろう</h1>
-      <h2 class="subtitle-text">
-        本サイトでは、現状の運転資金を把握し自社にどの程度の借入が必要か<br>
-        現状の経営状況では何年で借入を返済できるかをざっくりと試算できます。
-      </h2>
-
-      <div class="flex px-4 py-3 justify-center">
-        <a href="/users/sign_up" class="btn-large-primary">
-          <span>新規登録をして計算スタート</span>
-        </a>
+        <h1 class="title-text">自社に必要な資金を知ろう</h1>
+        <h2 class="subtitle-text">
+          本サイトでは、現状の運転資金を把握し自社にどの程度の借入が必要か<br>
+          現状の経営状況では何年で借入を返済できるかをざっくりと試算できます。
+        </h2>
+        <div class="flex px-4 py-3 justify-center">
+          <% if user_signed_in? %>
+            <a href="<%= user_path(current_user) %>" class="btn-large-primary">
+              <span>計算スタート</span>
+            </a>
+          <% else %>
+            <a href="/users/sign_up" class="btn-large-primary">
+              <span>新規登録をして計算スタート</span>
+            </a>
+          <% end %>
         </div>
       </div>
     </main>

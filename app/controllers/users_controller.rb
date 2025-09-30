@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   # アカウント表示ページ
   def show
     @user = User.find(params[:id])
+    @calculations = @user.calculations || []  # 計算結果がない場合は空配列をセット
   end
   
   # プロフィール表示ページ
