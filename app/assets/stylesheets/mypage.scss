@@ -24,10 +24,10 @@
   text-decoration: none;
   display: inline-block;
   padding: 8px 16px;
-  border: 2px solid #fff; /* 白い枠線 */
-  border-radius: 4px;      /* 角は少し丸める */
-  color: #fff;             /* 文字は白 */
-  background-color: rgba(255, 255, 255, 0.1); /* うっすら白の背景透過 */
+  border: 2px solid #fff;
+  border-radius: 4px;     
+  color: #fff;          
+  background-color: rgba(255, 255, 255, 0.1);
   transition: background-color 0.3s, color 0.3s;
   cursor: pointer;
 }

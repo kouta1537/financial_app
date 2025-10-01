@@ -34,8 +34,13 @@ input[type="password"] {
   box-sizing: border-box;
 }
 
-.actions input[type="submit"] {
-  width: 100%;
+.actions{
+  justify-content: space-between;
+  display: flex;
+}
+
+.actions input[type="submit"]{
+  width: 120px;
   padding: 10px 0;
   font-size: 1.1rem;
   font-weight: bold;
@@ -46,6 +51,22 @@ input[type="password"] {
   cursor: pointer;
 }
 
-.actions input[type="submit"]:hover {
+.actions a{
+  width: 120px;
+  padding: 10px 0;
+  text-align: center;
+  display: block;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #1979e6;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.actions input[type="submit"]:hover,
+.actions a:hover {
   background-color: #135ab4;
 }
