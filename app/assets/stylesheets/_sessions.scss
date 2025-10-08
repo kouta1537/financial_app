@@ -19,6 +19,17 @@ form {
   box-sizing: border-box;
 }
 
+form.button_to {
+  padding:  0;
+  background: none;
+  margin: 0;
+  box-sizing: none;
+  display: inline;
+  border: none;
+  
+}
+
+
 .field {
   margin-bottom: 20px;
 }

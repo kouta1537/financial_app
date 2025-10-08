@@ -1,8 +1,8 @@
-  <h2 class="header-title">
-    <a href="/"> ざっくり経営ナビ</a>
-  </h2>
+<h2 class="header-title">
+  <a href="/">ざっくり経営ナビ</a>
+</h2>
 
-  <nav>
+<nav>
   <% if user_signed_in? %>
     <ul class="header-buttons logged-in-menu">
       <li class="user-menu">
@@ -15,9 +15,15 @@
     </ul>
   <% else %>
     <ul class="header-buttons">
-      <li><a href="/users/sign_up"><span>新規登録</span></a></li>
-      <li><a href="/users/sign_in"><span>ログイン</span></a></li>
-      <li><a href=""><span>ゲストログイン</span></a></li>
-    </ul>
-    <% end  %>
-  </nav>
+      <li><%= link_to '新規登録', new_user_registration_path %></li>
+      <li><%= link_to 'ログイン', new_user_session_path %></li>
+      <li>
+        <%= button_to 'ゲストログイン', users_guest_sign_in_path,
+          method: :post,
+          class: 'nav-btn'
+        %>
+      </li>
+      </ul>
+  <% end %>  
+</nav>
+

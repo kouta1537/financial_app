@@ -8,5 +8,14 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :rooms, dependent: :destroy 
   has_many :reservations
-  has_many :calculations       
+  has_many :calculations
+  
+def self.guest
+  find_or_create_by!(email: 'guest@example.com') do |user|
+    user.password = SecureRandom.urlsafe_base64
+    user.password_confirmation = user.password
+    user.username = "ゲスト"
+    user.confirmed_at = Time.current if user.respond_to?(:confirmed_at)
+  end
+end
 end
