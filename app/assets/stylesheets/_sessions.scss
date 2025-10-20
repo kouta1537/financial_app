@@ -26,7 +26,7 @@ form.button_to {
   box-sizing: none;
   display: inline;
   border: none;
-  
+
 }
 
 
@@ -80,4 +80,31 @@ input[type="password"] {
 .actions input[type="submit"]:hover,
 .actions a:hover {
   background-color: #135ab4;
+}
+
+.alert.alert-warning {
+  font-size: 20px;
+  color: #fff;
+}
+
+.guest-actions a {
+  width: 120px;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #1979e6;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.guest-actions {
+  display: flex;
+  justify-content: center;
 }
