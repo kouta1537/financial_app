@@ -1,0 +1,46 @@
+
+.calculation-page .explain {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+
+.calculation-page .form-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  gap: 16px;    
+  max-width: 500px;
+  margin: 0 auto; 
+}
+
+
+.calculation-page .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;              
+}
+
+
+.calculation-page .btn-calculate {
+  width: 120px;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #1979e6;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.result-page {
+    color: white;
+}
+

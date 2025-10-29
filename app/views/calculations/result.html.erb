@@ -1,0 +1,18 @@
+<div class="result-page">
+    
+<h1>計算結果</h1>
+
+<p><strong>CF:</strong> <%= number_with_delimiter(@cf) %></p>
+<p><strong>債務償還年数:</strong>
+  <%= @debt_service_years ? @debt_service_years.round(2) : "算出不可" %> 年
+</p>
+
+<%= form_with model: @calculation, url: calculations_path, method: :post, data: { turbo: false } do |f| %>
+  <%= f.hidden_field :operating_profit %>
+  <%= f.hidden_field :depreciation %>
+  <%= f.hidden_field :borrowing %>
+  <%= f.submit "保存する" %>
+<% end %>
+
+<%= link_to "再計算する", new_calculation_path, class: "btn" %>
+</div>

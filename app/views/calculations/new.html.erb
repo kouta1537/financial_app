@@ -1,0 +1,28 @@
+<div class="calculation-page">
+  <h2 class="explain">
+    下記フォームに数字を入力してください。<br>
+    ※経常利益とは営業利益から営業外損益を差引したものです。
+  </h2>
+
+  <div class="form-container">
+    <%= form_with model: @calculation, url: preview_calculations_path, method: :post, data: { turbo: false } do |f| %>
+      <div class="form-group">
+        <%= f.label :operating_profit, "経常利益" %>
+        <%= f.text_field :operating_profit, value: @calculation.operating_profit, class: "number-with-comma" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :depreciation, "減価償却費" %>
+        <%= f.text_field :depreciation, value: @calculation.depreciation, class: "number-with-comma" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :borrowing, "借入金" %>
+        <%= f.text_field :borrowing, value: @calculation.borrowing, class: "number-with-comma" %>
+      </div>
+
+      <%= f.submit "計算", class: "btn-calculate" %>
+    <% end %>
+  </div>
+</div>
+
