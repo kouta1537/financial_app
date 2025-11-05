@@ -6,26 +6,43 @@ class CalculationsController < ApplicationController
   end
 
   def preview
-    @calculation = Calculation.new(calculation_params)
+    raw = params.require(:calculation).permit(:operating_profit, :depreciation, :borrowing)
 
-    operating_profit = params[:calculation][:operating_profit].delete(',').to_f
-    depreciation     = params[:calculation][:depreciation].delete(',').to_f
-    borrowing        = params[:calculation][:borrowing].delete(',').to_f
+    # --- 未入力チェック ---
+    if raw[:operating_profit].blank? || raw[:depreciation].blank? || raw[:borrowing].blank?
+      flash.now[:alert] = "すべての項目を入力してください（0はOKです）"
+      @calculation = Calculation.new
+      @calculation.operating_profit = raw[:operating_profit]
+      @calculation.depreciation     = raw[:depreciation]
+      @calculation.borrowing        = raw[:borrowing]
+    
+      return render :new, status: :unprocessable_entity
+    end
 
-    @cf = @calculation.operating_profit.to_f + @calculation.depreciation.to_f
-    @debt_service_years = @cf > 0 ? (@calculation.borrowing.to_f / @cf).round(2) : nil
+    # --- 全項目入力あり → 数値変換して計算 ---
+    op = raw[:operating_profit].delete(',').to_f
+    dp = raw[:depreciation].delete(',').to_f
+    br = raw[:borrowing].delete(',').to_f
 
-    @calculation = Calculation.new(
-      operating_profit: operating_profit,
-      depreciation: depreciation,
-      borrowing: borrowing
-    )
+    @cf = op + dp
+    @debt_service_years = @cf > 0 ? (br / @cf).round(2) : nil
+
+    # --- ビュー用に文字列を保持 ---
+    @calculation = Calculation.new
+    @calculation.operating_profit = raw[:operating_profit]
+    @calculation.depreciation     = raw[:depreciation]
+    @calculation.borrowing        = raw[:borrowing]
 
     render :result
   end
 
   def create
-    @calculation = current_user.calculations.new(calculation_params)
+    @calculation = current_user.calculations.new(
+      operating_profit: params[:calculation][:operating_profit].to_s.delete(',').to_f,
+      depreciation:     params[:calculation][:depreciation].to_s.delete(',').to_f,
+      borrowing:        params[:calculation][:borrowing].to_s.delete(',').to_f
+    )
+
     if @calculation.save
       redirect_to mypage_path, notice: "計算結果を保存しました"
     else
@@ -37,7 +54,5 @@ class CalculationsController < ApplicationController
 
   def calculation_params
     params.require(:calculation).permit(:operating_profit, :depreciation, :borrowing)
-          .transform_values { |v| v.delete(',').to_f }
   end
 end
-
