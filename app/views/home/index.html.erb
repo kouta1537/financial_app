@@ -16,7 +16,7 @@
         </h2>
         <div class="flex px-4 py-3 justify-center">
           <% if user_signed_in? %>
-            <a href="<%= user_path(current_user) %>" class="btn-large-primary">
+            <a href="<%= new_calculation_path %>" class="btn-large-primary">
               <span>計算スタート</span>
             </a>
           <% else %>
