@@ -44,14 +44,22 @@ class CalculationsController < ApplicationController
     @calculation = current_user.calculations.new(
       operating_profit: params[:calculation][:operating_profit].to_s.delete(',').to_f,
       depreciation:     params[:calculation][:depreciation].to_s.delete(',').to_f,
-      borrowing:        params[:calculation][:borrowing].to_s.delete(',').to_f
+      borrowing:        params[:calculation][:borrowing].to_s.delete(',').to_f,
+      operating_cf:     params[:calculation][:operating_cf].to_f,
+      debt_service_years: params[:calculation][:debt_service_years].to_f
     )
 
     if @calculation.save
-      redirect_to mypage_path, notice: "計算結果を保存しました"
+      redirect_to user_path(current_user), notice: "計算結果を保存しました"
     else
       render :new
     end
+  end
+
+  def destroy
+  @calculation = current_user.calculations.find(params[:id])
+  @calculation.destroy
+  redirect_to user_path(current_user), notice: "計算結果を削除しました。"
   end
 
   private

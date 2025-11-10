@@ -1,4 +1,4 @@
- <%= stylesheet_link_tag 'mypage', media: 'all', 'data-turbo-track': 'reload' %>
+<%= stylesheet_link_tag 'mypage', media: 'all', 'data-turbo-track': 'reload' %>
 
 <div class="mypage-container">
   <div class="mypage-header">
@@ -11,18 +11,39 @@
   </div>
 
   <main class="mypage-main">
-    <h2>計算結果履歴</h2>
+    <!-- 見出しとボタンを横並びに -->
+    <div class="mypage-main-header">
+      <h2>計算結果履歴</h2>
+      <a href="<%= new_calculation_path %>" class="calculation-btn">計算スタート</a>
+    </div>
+
     <% if @calculations.present? %>
-    <% @calculations.each do |calc| %>
-    <p><%= calc.created_at.strftime('%Y/%m/%d') %> 借入必要額: <%= calc.borrowing %> 円</p>
-    <% end %>
+      <div class="calc-history-table">
+        <div class="calc-history-header">
+          <div>日付</div>
+          <div>借入必要額</div>
+          <div>CF</div>
+          <div>償還年数</div>
+          <div>操作</div>
+        </div>
+
+        <% @calculations.each do |calc| %>
+          <div class="calc-history-row">
+            <div><%= calc.created_at.strftime('%Y/%m/%d') %></div>
+            <div><%= number_with_delimiter(calc.borrowing) %>円</div>
+            <div><%= number_with_delimiter(calc.operating_cf.round) %>円</div>
+            <div><%= calc.debt_service_years ? calc.debt_service_years.round : "算出不可" %>年</div>
+            <div>
+              <%= link_to "削除", calculation_path(calc),
+                  data: { turbo_method: :delete, turbo_confirm: "この計算結果を削除しますか？" },
+                  class: "btn-delete" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     <% else %>
-    <p>計算結果がまだありません。</p>
+      <p>計算結果がまだありません。</p>
     <% end %>
-    </ul>
-     <a href="<%= new_calculation_path %>" class="calculation-btn">
-     <span>計算スタート</span>
-     </a>
   </main>
 </div>
 

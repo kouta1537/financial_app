@@ -8,10 +8,12 @@
 </p>
  <div class="result-actions">
 <%= form_with model: @calculation, url: calculations_path, method: :post, data: { turbo: false } do |f| %>
-  <%= f.hidden_field :operating_profit %>
-  <%= f.hidden_field :depreciation %>
-  <%= f.hidden_field :borrowing %>
-  <%= f.submit "保存する" %>
+      <%= f.hidden_field :operating_profit %>
+      <%= f.hidden_field :depreciation %>
+      <%= f.hidden_field :borrowing %>
+      <%= f.hidden_field :operating_cf, value: @cf %>
+      <%= f.hidden_field :debt_service_years, value: @debt_service_years %>
+      <%= f.submit "保存する", class: "btn-save" %>
 <% end %>
 
     <%= link_to "再計算する",

@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_09_18_124530) do
+ActiveRecord::Schema[7.1].define(version: 2025_11_10_131311) do
   create_table "calculations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "operating_profit"
-    t.integer "depreciation"
-    t.integer "borrowing"
-    t.integer "operating_cf"
+    t.bigint "operating_profit"
+    t.bigint "depreciation"
+    t.bigint "borrowing"
+    t.bigint "operating_cf"
     t.float "debt_service_years"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

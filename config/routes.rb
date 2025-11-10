@@ -5,14 +5,12 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   authenticated :user do
-    resources :calculations, only: [:new, :create] do
+    resources :calculations, only: [:new, :create, :preview, :destroy] do
       collection do
         post :preview
         get  :result     
       end
     end
-    
-    get  'mypage', to: 'mypage#show', as: :mypage
   end
 
   devise_scope :user do
