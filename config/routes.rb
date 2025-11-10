@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :calculations, only: [:new, :create, :preview, :destroy] do
       collection do
         post :preview
+        get  :preview
         get  :result     
       end
     end

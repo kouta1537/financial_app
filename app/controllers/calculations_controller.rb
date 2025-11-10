@@ -10,6 +10,10 @@ class CalculationsController < ApplicationController
   end
 
   def preview
+    unless params[:calculation].present?
+    redirect_to new_calculation_path, alert: "計算フォームから送信してください"
+    return
+  end
     raw = params.require(:calculation).permit(:operating_profit, :depreciation, :borrowing)
 
     # --- 未入力チェック ---

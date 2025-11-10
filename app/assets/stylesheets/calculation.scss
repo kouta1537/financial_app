@@ -51,27 +51,11 @@
   margin-top: 20px;
 }
 
-.btn-save, .btn-recalculate {
-  padding: 8px 16px;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  color: white;
-}
-
-.btn-save {
-  background-color: #1979e6;
-  border: none;
-}
 
 .btn-save:hover {
   background-color: #135ab4;
 }
 
-.btn-recalculate {
-  background-color: #aaa;
-}
 
 .btn-recalculate:hover {
   background-color: #888;
@@ -90,4 +74,28 @@
   border-radius: 4px;
   margin-bottom: 15px;
   font-weight: bold;
+}
+
+
+.btn-save, .btn-recalculate {
+  padding: 8px 16px;
+  border: none;
+  background: #1979e6;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
+.btn-save:hover, .btn-recalculate:hover {
+  background-color: #156fd1;
+}
+
+.result-form {
+  all: unset;
+  display: inline-block;
 }
