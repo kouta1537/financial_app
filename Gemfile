@@ -65,4 +65,6 @@ gem 'devise'
 
 gem 'sassc'
 
+gem 'kaminari'
+
 

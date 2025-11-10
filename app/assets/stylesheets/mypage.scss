@@ -119,3 +119,24 @@
     gap: 10px;
   }
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.pagination a,
+.pagination span {
+  margin: 0 5px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #1979e6;
+  text-decoration: none;
+}
+
+.pagination .current {
+  background-color: #1979e6;
+  color: white;
+  border-color: #1979e6;
+}

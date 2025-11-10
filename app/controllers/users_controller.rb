@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # アカウント表示ページ
   def show
     @user = User.find(params[:id])
-    @calculations = @user.calculations || [] 
+    @calculations = @user.calculations.order(created_at: :desc).page(params[:page]).per(5)
   end
   
   # プロフィール表示ページ

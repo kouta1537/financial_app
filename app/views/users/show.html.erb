@@ -40,6 +40,9 @@
             </div>
           </div>
         <% end %>
+               <div class="pagination">
+          <%= paginate @calculations %>
+        </div>
       </div>
     <% else %>
       <p>計算結果がまだありません。</p>
