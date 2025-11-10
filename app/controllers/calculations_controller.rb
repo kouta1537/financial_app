@@ -2,7 +2,11 @@ class CalculationsController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @calculation = Calculation.new
+    @calculation = Calculation.new(
+    operating_profit: params[:operating_profit],
+    depreciation: params[:depreciation],
+    borrowing: params[:borrowing]
+  )
   end
 
   def preview

@@ -14,6 +14,12 @@
   <%= f.submit "保存する" %>
 <% end %>
 
- <%= link_to "再計算する", new_calculation_path, class: "btn-recalculate" %>
+    <%= link_to "再計算する",
+      new_calculation_path(
+        operating_profit: @calculation.operating_profit,
+        depreciation: @calculation.depreciation,
+        borrowing: @calculation.borrowing
+      ),
+      class: "btn-recalculate" %>
 </div>
 </div>
