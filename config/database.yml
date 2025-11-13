@@ -11,12 +11,13 @@
 #
 default: &default
   adapter: mysql2
-  encoding: utf8mb4
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
-  host: localhost
-  socket: /tmp/mysql2.sock
+  encoding: utf8
+  collation: utf8_general_ci
+  pool: 5
+  host: <%= ENV['MYSQL_HOST'] || 'localhost' %>
+  username: <%= ENV['MYSQL_USERNAME'] || 'root' %>
+  password: <%= ENV['MYSQL_PASSWORD'] || '' %>
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -53,4 +54,4 @@ production:
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  url: <%= ENV['JAWSDB_URL'] %>
+  url: <%= ENV['JAWSDB_URL']&.sub('mysql://', 'mysql2://') %>
