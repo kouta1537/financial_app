@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   authenticated :user do
-    resources :calculations, only: [:new, :create, :preview, :destroy] do
+    resources :calculations, only: [:new, :create, :destroy] do
       collection do
         post :preview
         get  :preview
@@ -18,4 +18,3 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
 end
-
