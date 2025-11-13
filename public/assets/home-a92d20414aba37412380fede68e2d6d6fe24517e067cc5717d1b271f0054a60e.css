@@ -1,0 +1,164 @@
+.FirstView {
+  height: 100vh;
+  background-image: url(/home/background-view.png);
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 80px;
+  box-sizing: border-box;
+  color: white; }
+
+html, body {
+  margin: 0;
+  padding: 0; }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #f0f2f4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  border-bottom: 1px solid #f0f2f4;
+  box-sizing: border-box;
+  width: 100%;
+  z-index: 10; }
+
+header a {
+  color: black;
+  text-decoration: none; }
+
+.header-title {
+  margin: 0; }
+
+.header-buttons {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  padding: 0;
+  margin: 0; }
+
+.header-buttons a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #1979e6;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold; }
+
+.header-buttons a:hover {
+  background-color: #135ab4; }
+
+.nav-btn {
+  all: unset;
+  display: inline-block;
+  background: #1979e6;
+  color: white;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0; }
+
+.nav-btn:hover {
+  background: #115293; }
+
+.user-menu {
+  position: relative;
+  display: inline-block; }
+
+.user-menu .dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  width: 150px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  z-index: 1000; }
+
+.user-menu:hover .dropdown-menu,
+.user-menu:focus-within .dropdown-menu {
+  display: block; }
+
+.dropdown-menu li {
+  padding: 5px 15px; }
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+  cursor: pointer; }
+
+.user-menu-button {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none; }
+
+.title-content {
+  text-align: center;
+  margin-right: 50px; }
+
+.btn-large-primary {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #1979e6;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-top: 30px; }
+
+.title-text {
+  font-size: 50px;
+  color: #f0f2f4; }
+
+.subtitle-text {
+  font-size: 0.9rem;
+  font-weight: normal;
+  line-height: 1.4;
+  color: #f0f2f4; }
+
+@media screen and (max-width: 768px) {
+  .FirstView {
+    height: auto;
+    background-position: top center;
+    padding: 20px; }
+  .title-content {
+    padding-left: 0;
+    padding-top: 40px;
+    align-items: center;
+    text-align: center; }
+  .title-text {
+    font-size: 2rem; }
+  .subtitle-text {
+    font-size: 0.8rem; }
+  .header {
+    padding: 12px 20px; }
+  .header-buttons a {
+    padding: 6px 12px;
+    font-size: 0.85rem; } }
+
+@media screen and (max-width: 480px) {
+  .title-text {
+    font-size: 1.5rem; }
+  .subtitle-text {
+    font-size: 0.75rem; }
+  .header-buttons a {
+    padding: 5px 10px;
+    font-size: 0.8rem; } }

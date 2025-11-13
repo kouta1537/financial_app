@@ -1,0 +1,81 @@
+@charset "UTF-8";
+.calculation-page .explain {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 20px; }
+
+.calculation-page .form-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  gap: 16px;
+  max-width: 500px;
+  margin: 0 auto; }
+
+.calculation-page .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; }
+
+.calculation-page .btn-calculate {
+  width: 120px;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #1979e6;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px; }
+
+.result-page {
+  color: white; }
+
+.result-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px; }
+
+.btn-save:hover {
+  background-color: #135ab4; }
+
+.btn-recalculate:hover {
+  background-color: #888; }
+
+/* フォームも横幅を調整したい場合 */
+.inline-form {
+  display: inline-block; }
+
+.alert-message {
+  background-color: #ffdddd;
+  border: 1px solid #ff6b6b;
+  color: #a30000;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-weight: bold; }
+
+.btn-save, .btn-recalculate {
+  padding: 8px 16px;
+  border: none;
+  background: #1979e6;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px; }
+
+.btn-save:hover, .btn-recalculate:hover {
+  background-color: #156fd1; }
+
+.result-form {
+  all: unset;
+  display: inline-block; }
