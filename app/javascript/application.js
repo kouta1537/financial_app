@@ -4,7 +4,7 @@ document.addEventListener("turbo:load", () => {
   const numberInputs = document.querySelectorAll("input.number-with-comma");
 
   numberInputs.forEach(input => {
-    // 再描画時にもカンマ付き整形（新規ロード含む）
+
     if (input.value && !input.value.includes(",")) {
       input.value = Number(input.value).toLocaleString();
     }
@@ -24,7 +24,6 @@ document.addEventListener("turbo:load", () => {
   });
 });
 
-// フォーム送信前にカンマ削除（計算用）
 document.addEventListener("submit", (e) => {
   e.target.querySelectorAll("input.number-with-comma").forEach((input) => {
     input.value = input.value.replace(/,/g, "");
