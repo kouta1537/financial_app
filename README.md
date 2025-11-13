@@ -6,13 +6,13 @@
 
 ## デモ画面
 
-![デモ画面](assets/images/demo/デモ画像.png)
+![デモ画面](demoimages/デモ画像.png)
 
 ---
 
 ## サービスURL
 
-[https://fin-app-kota-f0138686ce69.herokuapp.com/calculations/new](https://fin-app-kota-f0138686ce69.herokuapp.com/calculations/new)
+[https://fin-app-kota-f0138686ce69.herokuapp.com/](https://fin-app-kota-f0138686ce69.herokuapp.com/)
 
 ---
 
@@ -56,7 +56,7 @@
 
 今後は運転資金の簡単な計算も行えるように考えており、その計算に必要なカラムを追加予定です。
 
-![ER図](assets/images/demo/ER図.png)
+![ER図](demoimages/ER図.png)
 
 ---
 
