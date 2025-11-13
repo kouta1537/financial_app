@@ -106,6 +106,49 @@
   background-color: #c9302c;
 }
 
+.no-calculation-message {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 100px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.no-calculation-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  margin-top: 40px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+.no-calculation-wrapper p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+}
+
+.no-calculation-wrapper .calculation-btn {
+  background-color: #1979e6;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 8px 16px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.no-calculation-wrapper .calculation-btn:hover {
+  background-color: #156fd1;
+}
+
+
+
 @media (max-width: 600px) {
   .calc-history-header,
   .calc-history-row {

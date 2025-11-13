@@ -11,10 +11,11 @@
   </div>
 
   <main class="mypage-main">
-    <!-- 見出しとボタンを横並びに -->
     <div class="mypage-main-header">
       <h2>計算結果履歴</h2>
+      <% if @calculations.present? %>
       <a href="<%= new_calculation_path %>" class="calculation-btn">計算スタート</a>
+      <% end %>
     </div>
 
     <% if @calculations.present? %>
@@ -32,7 +33,13 @@
             <div><%= calc.created_at.strftime('%Y/%m/%d') %></div>
             <div><%= number_with_delimiter(calc.borrowing) %>円</div>
             <div><%= number_with_delimiter(calc.operating_cf.round) %>円</div>
-            <div><%= calc.debt_service_years ? calc.debt_service_years.round : "算出不可" %>年</div>
+            <div>
+              <% if calc.debt_service_years.is_a?(Numeric) %>
+                <%= calc.debt_service_years.round %> 年
+              <% else %>
+                算出不可
+              <% end %>
+            </div>
             <div>
               <%= link_to "削除", calculation_path(calc),
                   data: { turbo_method: :delete, turbo_confirm: "この計算結果を削除しますか？" },
@@ -40,12 +47,15 @@
             </div>
           </div>
         <% end %>
-               <div class="pagination">
+
+        <div class="pagination">
           <%= paginate @calculations %>
         </div>
       </div>
     <% else %>
-      <p>計算結果がまだありません。</p>
+      <div class="no-calculation-wrapper">
+        <p>計算結果がまだありません。</p>
+        <a href="<%= new_calculation_path %>" class="calculation-btn">計算スタート</a>
     <% end %>
   </main>
 </div>

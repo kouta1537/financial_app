@@ -1,20 +1,24 @@
 <div class="result-page">
+  <h1>計算結果</h1>
 
-<h1>計算結果</h1>
+  <p><strong>CF:</strong> <%= number_with_delimiter(@cf.round) %>円</p>
+  <p><strong>債務償還年数:</strong>
+    <% if @debt_service_years.present? %>
+      <%= @debt_service_years.round %> 年
+    <% else %>
+      算出不可
+    <% end %>
+  </p>
 
-<p><strong>CF:</strong> <%= number_with_delimiter(@cf.round) %>円</p>
-<p><strong>債務償還年数:</strong>
-  <%= @debt_service_years ? @debt_service_years.round : "算出不可" %> 年
-</p>
- <div class="result-actions">
-<%= form_with model: @calculation, url: calculations_path, method: :post, data: { turbo: false }, html: { class: "result-form" } do |f| %>
+  <div class="result-actions">
+    <%= form_with model: @calculation, url: calculations_path, method: :post, data: { turbo: false }, html: { class: "result-form" } do |f| %>
       <%= f.hidden_field :operating_profit %>
       <%= f.hidden_field :depreciation %>
       <%= f.hidden_field :borrowing %>
       <%= f.hidden_field :operating_cf, value: @cf %>
       <%= f.hidden_field :debt_service_years, value: @debt_service_years %>
       <%= f.button "保存する", class: "btn-save" %>
-<% end %>
+    <% end %>
 
     <%= link_to "再計算する",
       new_calculation_path(
@@ -23,5 +27,5 @@
         borrowing: @calculation.borrowing
       ),
       class: "btn-recalculate" %>
-</div>
+  </div>
 </div>
