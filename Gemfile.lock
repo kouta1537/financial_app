@@ -122,9 +122,12 @@ GEM
     factory_bot_rails (6.5.0)
       factory_bot (~> 6.5)
       railties (>= 6.1.0)
-    ffi (1.17.2)
+    ffi (1.17.2-aarch64-linux-gnu)
+    ffi (1.17.2-arm-linux-gnu)
     ffi (1.17.2-arm64-darwin)
+    ffi (1.17.2-x86-linux-gnu)
     ffi (1.17.2-x86_64-darwin)
+    ffi (1.17.2-x86_64-linux-gnu)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hotwire-spark (0.1.13)
@@ -356,7 +359,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.0.4p208
+   ruby 3.2.2p53
 
 BUNDLED WITH
    2.5.9
