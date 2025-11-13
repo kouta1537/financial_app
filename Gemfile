@@ -74,3 +74,6 @@ group :development, :test do
   gem 'capybara'
 end
 
+group :development do
+  gem 'rails-erd'
+end
