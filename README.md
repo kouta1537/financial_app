@@ -6,7 +6,7 @@
 
 ## デモ画面
 
-![デモ画面](images/demo/デモ画像.png)
+![デモ画面](assets/images/demo/デモ画像.png)
 
 ---
 
@@ -56,7 +56,7 @@
 
 今後は運転資金の簡単な計算も行えるように考えており、その計算に必要なカラムを追加予定です。
 
-![ER図](images/demo/ER図.png)
+![ER図](assets/images/demo/ER図.png)
 
 ---
 
